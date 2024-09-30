@@ -10,6 +10,47 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
   
   <style>
+    .landing-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f8d7da;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      transition: opacity 1s ease;
+    }
+
+    .landing-content {
+      text-align: center;
+    }
+
+    .landing-image {
+      width: 250px;
+      height: auto;
+      border-radius: 5%;
+      margin-bottom: 100px;
+    } 
+
+    .enter-btn {
+      font-family: sans-serif;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-btn:hover {
+       background-color: #ffffff;
+    }
+
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f8d7da;
@@ -49,12 +90,12 @@
 
     .header h1 {
       top: 50%;
-      font-size: 3.5em;
+      font-size: 2.5em;
     }
 
     .header h2 {
-      top: 65%;
-      font-size: 3em;
+      top: 60%;
+      font-size: 2em;
     }
 
     .header:hover h1, .header:hover h2 {
@@ -215,6 +256,15 @@
   </style>
 </head>
 <body>
+  <div class="landing-page">
+    <div class="landing-content">
+      <img src="ihirrrr.png" alt="Person smiling" class="landing-image">
+      <h1> Dua Tiga Tutup Botol</h1>
+      <h2> Hbd ya di tunggu makan makannya</h2>
+      <button class="enter-btn" onclick="startWebsite()">Tekan Ini Dong</button>
+    </div>
+  </div>
+  
   <div class="bg-animation">
     <span></span>
     <span></span>
@@ -242,15 +292,15 @@
     <div class="photo-card">
       <img src="DSC02557.JPG" alt="Person smiling with friends">
       <div class="comment">
-        Sehat Selalu Wulan Bulannn 
-        <br/> Semoga yang di usahakan ada hasilnyaa
+        Barakallah fii umrik! 
+        <br/> Semoga Allah memberkahi umurmu dengan kelimpahan rizki, kebahagiaan yang tak terhingga, dan keberkahan yang melimpah di dunia dan akhirat.
       </div>
     </div>
     <div class="photo-card">
       <img src="Foto Bareng.jpg" alt="Group of people having fun">
       <div class="comment">
         Happy
-        <br/> Sehat sehat yh kalian berduwaaa walaupun saya belum pernah ketemu
+        <br/> Sehat sehat yh kalian berduaaa walaupun saya belum pernah ketemu
       </div>
     </div>
     <div class="photo-card">
@@ -270,15 +320,15 @@
     <div class="photo-card">
       <img src="Gemas 2.png" alt="Person making a funny face">
       <div class="comment">
-        Barakallah fii umrik! 
-        <br/> Semoga Allah memberkahi umurmu dengan kelimpahan rizki, kebahagiaan yang tak terhingga, dan keberkahan yang melimpah di dunia dan akhirat.
+        Semangat Mengejar impiannya
+        <br/> Semoga Tercapai Universitas Impiannya dan pekerjaan yang ingin di gapai, kalau menjadi guru jangan galak-galak yaaa, serem 
       </div>
     </div>
     <div class="photo-card">
       <img src="Gemas.png" alt="Person smiling and posing">
       <div class="comment">
-        Di mudahkan Semuanya
-        <br/> Semoga tercapai universitas impiannya dan semangat selalu belajar nyaa 
+        Apalagi ya
+        <br/> Gatau deh bingung, intinya terimakasih udah bikin gw semangat sekolah lagi dan mengenal akan pentingnya ber organisasi 
       </div>
     </div>
   </div>
@@ -291,12 +341,22 @@
     </p>
   </div>
 
-  <audio autoplay loop>
+  <audio loop>
     <source src="Pasilyo.mp3" type="audio/mpeg">
-    Your browser does not support the audio tag.
   </audio>
 
   <script>
+    // Menyembunyikan landing page dan memutar audio
+    function startWebsite() {
+      document.querySelector('.landing-page').style.opacity = '0';
+       setTimeout(() => {
+       document.querySelector('.landing-page').style.display = 'none';
+     }, 1000); // Hapus setelah transisi
+
+    // Memulai audio
+      document.querySelector('audio').play();
+    }
+
     // Initialize GSAP
     gsap.registerPlugin(ScrollTrigger);
 
